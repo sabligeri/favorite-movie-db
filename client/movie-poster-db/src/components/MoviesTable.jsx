@@ -1,9 +1,9 @@
 const MoviesTable = ({ movies }) => {
 
-  function handleSaveToFavMovies(movies) {
-    const poster = movies.Poster;
-    const title = movies.Title;
-    const year = movies.Year;
+  function handleSaveToFavMovies(movie) {
+    const poster = movie.Poster;
+    const title = movie.Title;
+    const year = movie.Year;
     fetch('/api/favmovies', {
       method: 'POST',
       headers: {
@@ -28,7 +28,7 @@ const MoviesTable = ({ movies }) => {
                 <img src={(movie.Poster !== 'N/A') ? movie.Poster : './src/noMoviePoster.jpg'} />
                 <h3>Title: {movie.Title} </h3>
                 <h4>Released Date: {movie.Year}</h4>
-                <button onClick={() => handleSaveToFavMovies(movies)}>Add to favorites</button>
+                <button onClick={() => handleSaveToFavMovies(movie)}>Add to favorites</button>
               </th>
             )
             )}
