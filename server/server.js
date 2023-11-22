@@ -10,7 +10,7 @@ app.use(express.json());
 
 const movieUrl = process.env.MOVIE_DB;
 
-app.post('URL', (req, res) => {
+app.post('/api/favmovies', (req, res) => {
   const poster = req.body.posetr;
   const title = req.body.title;
   const year = req.body.year;
