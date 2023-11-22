@@ -7,6 +7,7 @@ function App() {
 
   const [searchInput, setSearchInput] = useState('');
   const [movies, setMovies] = useState([]);
+  const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
     (searchInput.length > 0) ?
@@ -31,13 +32,23 @@ function App() {
 
   return (
     <>
+    {!showFavorites ? (
+      <>
       <SearchBar
         value={searchInput}
         inputChange={e => handleSearchInputChange(e)}
       />
+      <button onClick={() => setShowFavorites(true)}>Favorites</button>
       <MoviesTable
       movies={movies}
       />
+      </>
+    ) : (
+      <div>
+        <button onClick={() => setShowFavorites(false)}>Back</button>
+        Favorites
+        </div>
+    )}
     </>
   )
 }
