@@ -24,7 +24,7 @@ function MyFavorites() {
       .then(res => res.json())
       .then(favMovies => setFavMovies(favMovies))
       .catch(error => console.log(error))
-  }, [])
+ }, []);
 
   return (
     <>
