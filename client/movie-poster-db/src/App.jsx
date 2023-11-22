@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import SearchBar from './components/SearchBar';
+import MoviesTable from './components/MoviesTable';
 
 function App() {
 
@@ -34,19 +35,9 @@ function App() {
         value={searchInput}
         inputChange={e => handleSearchInputChange(e)}
       />
-      <table>
-        <tbody>
-          <tr>
-            {movies.map(movie => (
-              <th key={movie.imdbID}>
-                <img src={(movie.Poster !== 'N/A') ? movie.Poster : './src/noMoviePoster.jpg'} />
-                <h3>Title: {movie.Title}</h3>
-              </th>
-            )
-            )}
-          </tr>
-        </tbody>
-      </table>
+      <MoviesTable
+      movies={movies}
+      />
     </>
   )
 }

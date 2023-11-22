@@ -15,7 +15,12 @@ body {
 
 th,
 h3 {
-  padding: 15px;
+  padding: 10px;
+}
+
+h4, h3 {
+  padding: 0px;
+  margin: 10px;
 }
 
 input {
@@ -27,6 +32,6 @@ input {
 }
 
 img {
-  width: 300px;
-  height: 444px;
+  width: 280px;
+  height: 424px;
 }
