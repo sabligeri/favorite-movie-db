@@ -11,7 +11,7 @@ app.use(express.json());
 const movieUrl = process.env.MOVIE_DB;
 
 app.post('/api/favmovies', (req, res) => {
-  const poster = req.body.posetr;
+  const poster = req.body.poster;
   const title = req.body.title;
   const year = req.body.year;
   const seen = 'unseen';
@@ -28,7 +28,7 @@ app.post('/api/favmovies', (req, res) => {
       .catch(err => res.status(400).json({ success: false }));
 });
 
-app.get('/api/favoriteMovies', (req, res) => {
+app.get('/api/favmovies', (req, res) => {
   MovieList.find()
         .then(movies => res.json(movies))
         .catch(err => res.status(400).json({ success: false, error: err }));
