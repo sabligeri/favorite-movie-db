@@ -28,7 +28,7 @@ app.post('URL', (req, res) => {
       .catch(err => res.status(400).json({ success: false }));
 });
 
-app.get('URL', (req, res) => {
+app.get('/api/favoriteMovies', (req, res) => {
   MovieList.find()
         .then(movies => res.json(movies))
         .catch(err => res.status(400).json({ success: false, error: err }));
