@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import SearchBar from './components/SearchBar';
 import MoviesTable from './components/MoviesTable';
+import MyFavorites from './components/MyFavorites';
 
 function App() {
 
@@ -44,10 +45,11 @@ function App() {
       />
       </>
     ) : (
-      <div>
+      <>
         <button onClick={() => setShowFavorites(false)}>Back</button>
-        Favorites
-        </div>
+        <MyFavorites
+        />
+        </>
     )}
     </>
   )
