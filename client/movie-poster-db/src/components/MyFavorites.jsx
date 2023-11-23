@@ -14,15 +14,6 @@ function MyFavorites() {
       .catch(error => console.log(error))
   }, [])
 
-  /*const handleSeen = () => {
-    if (updatedSeen === false) {
-      setUpdatedSeen(true);
-      setSeen('seen');
-    } else if (updatedSeen === true) {
-      setUpdatedSeen(false);
-      setSeen('unseen');
-    }
-  }*/
 
   const handleEditFavMovies = (movie) => {
     setEditFavMovies(movie);
