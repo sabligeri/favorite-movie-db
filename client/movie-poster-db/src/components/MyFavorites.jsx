@@ -15,12 +15,6 @@ function MyFavorites() {
       }))
   };
 
-  /*const deleteFav = (id) => {
-    return (
-      <DeleteVerify deleteMovie={() => deleteMovie(id)} />
-    )
-  };*/
-
   useEffect(() => {
     fetch('/api/favmovies')
       .then(res => res.json())
