@@ -16,19 +16,19 @@ function MyFavorites() {
       .then(setShowModal(false))
   };
 
-    useEffect(() => {
+  useEffect(() => {
     fetch('/api/favmovies')
       .then(res => res.json())
       .then(favMovies => setFavMovies(favMovies))
       .catch(error => console.log(error))
- }, []);
+  }, []);
 
   return (
     <>
       <h1> My favorite movies </h1>
-            {(showModal === true) ? (
-              <DeleteVerify deleteMovie={() => deleteMovie(id)} closeModal={setShowModal}/>) : (null)
-            }
+      {(showModal === true) ? (
+        <DeleteVerify deleteMovie={() => deleteMovie(id)} closeModal={setShowModal}/>) : (null)
+      }
       <table>
         <tbody>
           <tr>
@@ -45,7 +45,7 @@ function MyFavorites() {
                   <input type="text" id="comment" name="comment" placeholder="Write your comment here" />
                   <button type="submit"> Save comment </button>
                 </form>
-                <button onClick={() => {setShowModal(true); setId(movie._id)}}> Remove from favorites </button>
+                <button onClick={() => { setShowModal(true); setId(movie._id) }}> Remove from favorites </button>
               </th>
             )
             )}
