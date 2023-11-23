@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import DeleteVerify from "./DeleteVerify";
 
 function MyFavorites() {
-  const [updatedSeen, setUpdatedSeen] = useState(false);
   const [seen, setSeen] = useState(null);
   const [comment, setComment] = useState('');
   const [favMovies, setFavMovies] = useState([]);

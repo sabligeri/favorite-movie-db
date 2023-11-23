@@ -33,24 +33,31 @@ function App() {
 
   return (
     <>
-    {!showFavorites ? (
-      <>
-      <SearchBar
-        value={searchInput}
-        inputChange={e => handleSearchInputChange(e)}
-      />
-      <button onClick={() => setShowFavorites(true)}>Favorites</button>
-      <MoviesTable
-      movies={movies}
-      />
-      </>
-    ) : (
-      <>
-        <button onClick={() => setShowFavorites(false)}>Back</button>
-        <MyFavorites
-        />
+      {!showFavorites ? (
+        <>
+          <SearchBar
+            value={searchInput}
+            inputChange={e => handleSearchInputChange(e)}
+          />
+          <button onClick={() => setShowFavorites(true)}>Favorites</button>
+          <MoviesTable
+            movies={movies}
+          />
+          {movies.length === 0 ? (
+            <>
+              <img id="mainGif" src="https://media.giphy.com/media/vNACsqooIUmcjzd5xR/giphy.gif"></img>
+              <h1>HBO MIN</h1>
+            </>
+          ) : (null)
+          }
         </>
-    )}
+      ) : (
+        <>
+          <button onClick={() => setShowFavorites(false)}>Back</button>
+          <MyFavorites
+          />
+        </>
+      )}
     </>
   )
 }
