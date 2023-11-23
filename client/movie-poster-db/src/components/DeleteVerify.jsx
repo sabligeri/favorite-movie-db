@@ -1,4 +1,5 @@
 function DeleteVerify({ deleteMovie, closeModal }) {
+  
     return (
         <>
             <div >
