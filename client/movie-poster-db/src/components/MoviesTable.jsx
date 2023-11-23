@@ -27,8 +27,8 @@ const MoviesTable = ({ movies }) => {
             {movies.map(movie => (
               <th key={movie.imdbID}>
                 <img src={(movie.Poster !== 'N/A') ? movie.Poster : './src/noMoviePoster.jpg'} />
-                <h3>Title: {movie.Title} </h3>
-                <h4>Released Date: {movie.Year}</h4>
+                <h3> {movie.Title} </h3>
+                <h4> {movie.Year}</h4>
                 <button onClick={() => handleSaveToFavMovies(movie)}>Add to favorites</button>
               </th>
             )

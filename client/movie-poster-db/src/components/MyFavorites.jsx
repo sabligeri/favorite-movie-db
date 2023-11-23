@@ -71,8 +71,8 @@ function MyFavorites() {
         {favMovies.map(movie => (
           <div style={{ display: "inline-block", margin: "10px", textAlign: "center" }} key={movie._id}>
             <img src={(movie.poster !== 'N/A') ? movie.poster : './src/noMoviePoster.jpg'} />
-            <h3>Title: {movie.title}</h3>
-            <h4>Released Date: {movie.year}</h4>
+            <h3>{movie.title}</h3>
+            <h4>{movie.year}</h4>
             <div>
               {editFavMovies === movie ? (
                 <label htmlFor="seenBox" style={{ display: "inline-block", }}>
