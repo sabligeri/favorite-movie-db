@@ -75,21 +75,27 @@ function MyFavorites() {
             <h4>Released Date: {movie.year}</h4>
             <div>
               {editFavMovies === movie ? (
+                <label htmlFor="seenBox" style={{ display: "inline-block", }}>
+                Have you seen it?
                 <input
                   type="checkbox"
-                  name='I have seen it'
+                  id="seenBox"
                   checked={seen === 'seen'}
                   onChange={() => setSeen(seen === 'seen' ? 'unseen' : 'seen')}
                 />
+              </label>
               ) : (
                 movie.seen
               )}
             </div>
             <div>
               {editFavMovies === movie ? (
-                <input
+                <textarea
                   type="text"
+                  placeholder="Write your comment here"
                   value={comment}
+                  rows={3}
+                  cols={30}
                   onChange={(e) => setComment(e.target.value)}
                 />
               ) : (

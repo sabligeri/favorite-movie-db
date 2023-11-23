@@ -96,4 +96,7 @@ button:active {
   box-shadow: none;
   justify-content: center;
   animation: anim-ss steps(23) 10s infinite;
+
+textarea{
+  border-radius: 20px;
 }
