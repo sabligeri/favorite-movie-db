@@ -15,13 +15,7 @@ function MyFavorites() {
       }))
   };
 
-  /*const deleteFav = (id) => {
-    return (
-      <DeleteVerify deleteMovie={() => deleteMovie(id)} />
-    )
-  };*/
-
-  useEffect(() => {
+    useEffect(() => {
     fetch('/api/favmovies')
       .then(res => res.json())
       .then(favMovies => setFavMovies(favMovies))
@@ -31,6 +25,9 @@ function MyFavorites() {
   return (
     <>
       <h1> My favorite movies </h1>
+            {(showModal === true) ? (
+              <DeleteVerify deleteMovie={() => deleteMovie(id)} />) : (null)
+            }
       <table>
         <tbody>
           <tr>
@@ -54,9 +51,6 @@ function MyFavorites() {
           </tr>
         </tbody>
       </table>
-      {(showModal == true) ? (
-        <DeleteVerify deleteMovie={() => deleteMovie(id)} />) : (null)
-      }
     </>
   )
 }

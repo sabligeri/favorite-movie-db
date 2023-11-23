@@ -1,15 +1,14 @@
-import {useState} from "react"
-import {Modal} from "react"
+import { useState } from "react"
 
-function DeleteVerify ({deleteMovie}) {
-
+function DeleteVerify({ deleteMovie }) {
+const [showModal, setShowModal] = useState(true)
     return (
         <>
-        <Modal isOpen={true}> 
-            <h1>Do you really want to delete from favorites? </h1>
-            <button onClick={() => deleteMovie} > Yes, sure </button>
-            <button> No, thanks </button>
-            </Modal>
+            <div >
+                <h1>Do you really want to delete from favorites? </h1>
+                <button onClick={deleteMovie} > Yes, sure </button>
+                <button onClick={() => setShowModal(false)}> No, thanks </button>
+            </div>
         </>
     )
 }
