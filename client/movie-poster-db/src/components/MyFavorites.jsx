@@ -13,6 +13,7 @@ function MyFavorites() {
       .then(setFavMovies((favMovies) => {
         return favMovies.filter((favMovie) => favMovie._id !== id);
       }))
+      .then(setShowModal(false))
   };
 
     useEffect(() => {
@@ -26,7 +27,7 @@ function MyFavorites() {
     <>
       <h1> My favorite movies </h1>
             {(showModal === true) ? (
-              <DeleteVerify deleteMovie={() => deleteMovie(id)} />) : (null)
+              <DeleteVerify deleteMovie={() => deleteMovie(id)} closeModal={setShowModal}/>) : (null)
             }
       <table>
         <tbody>
