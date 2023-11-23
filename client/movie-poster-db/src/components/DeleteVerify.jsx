@@ -1,11 +1,15 @@
-import react from "react"
+import {useState} from "react"
+import {Modal} from "react"
 
-function DeleteVerify ({deleteMovie, back}) {
+function DeleteVerify ({deleteMovie}) {
+
     return (
         <>
-        <h2> Do you really want to delete from favorites? </h2>
-            <button onClick={deleteMovie} > Yes, sure </button>
-            <button onClick={back}> No, thanks </button>
+        <Modal isOpen={true}> 
+            <h1>Do you really want to delete from favorites? </h1>
+            <button onClick={() => deleteMovie} > Yes, sure </button>
+            <button> No, thanks </button>
+            </Modal>
         </>
     )
 }
