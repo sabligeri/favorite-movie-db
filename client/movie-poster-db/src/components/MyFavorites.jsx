@@ -4,20 +4,22 @@ import DeleteVerify from "./DeleteVerify";
 function MyFavorites() {
 
   const [favMovies, setFavMovies] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [id, setId] = useState(null);
 
   const deleteMovie = (id) => {
     return fetch(`/api/favmovies/${id}`, { method: "DELETE" }).then((res) =>
       res.json())
       .then(setFavMovies((favMovies) => {
-    return favMovies.filter((favMovie) => favMovie._id !== id);
-    }))
-    };
-
-  const deleteFav = () => {
-    return (
-    <DeleteVerify deleteMovie={deleteMovie} back={setFavMovies(favMovies)}/>  
-    )
+        return favMovies.filter((favMovie) => favMovie._id !== id);
+      }))
   };
+
+  /*const deleteFav = (id) => {
+    return (
+      <DeleteVerify deleteMovie={() => deleteMovie(id)} />
+    )
+  };*/
 
   useEffect(() => {
     fetch('/api/favmovies')
@@ -45,13 +47,16 @@ function MyFavorites() {
                   <input type="text" id="comment" name="comment" placeholder="Write your comment here" />
                   <button type="submit"> Save comment </button>
                 </form>
-                <button onClick={deleteFav}> Remove from favorites </button>
+                <button onClick={() => {setShowModal(true); setId(movie._id)}}> Remove from favorites </button>
               </th>
             )
             )}
           </tr>
         </tbody>
       </table>
+      {(showModal == true) ? (
+        <DeleteVerify deleteMovie={() => deleteMovie(id)} />) : (null)
+      }
     </>
   )
 }
