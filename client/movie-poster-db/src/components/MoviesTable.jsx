@@ -1,5 +1,6 @@
-const MoviesTable = ({ movies }) => {
 
+
+const MoviesTable = ({ movies }) => {
   function handleSaveToFavMovies(movie) {
     const poster = movie.Poster;
     const title = movie.Title;

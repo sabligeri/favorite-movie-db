@@ -34,6 +34,15 @@ app.get('/api/favmovies', (req, res) => {
         .catch(err => res.status(400).json({ success: false, error: err }));
 })
 
+app.patch('/api/favmovies/:id', (req, res) => {
+  const todoId = req.params.id;
+  const { seen, comment } = req.body;
+
+  MovieList.findByIdAndUpdate(todoId, { seen, comment }, { new: true })
+      .then(updateFavMovies => res.json(updateFavMovies))
+      .catch(err => res.status(400).json({ success: false, error: err }));
+});
+
 app.delete('/api/favmovies/:id', (req, res) => {
   const id = req.params.id
   MovieList.findByIdAndDelete(id)
