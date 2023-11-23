@@ -34,8 +34,8 @@ app.get('/api/favmovies', (req, res) => {
         .catch(err => res.status(400).json({ success: false, error: err }));
 })
 
-app.delete('/api/favmovies', (req, res) => {
-  const id = req.body.id
+app.delete('/api/favmovies/:id', (req, res) => {
+  const id = req.params.id
   MovieList.findByIdAndDelete(id)
     .then(movies => res.json(movies))
     .catch(err => res.status(400).json({ success: false, error: err }))
