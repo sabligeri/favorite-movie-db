@@ -43,6 +43,13 @@ app.patch('/api/favmovies/:id', (req, res) => {
       .catch(err => res.status(400).json({ success: false, error: err }));
 });
 
+app.delete('/api/favmovies/:id', (req, res) => {
+  const id = req.params.id
+  MovieList.findByIdAndDelete(id)
+    .then(movies => res.json(movies))
+    .catch(err => res.status(400).json({ success: false, error: err }))
+})
+
 mongoose.connect(movieUrl)
   .then(() =>
     app.listen(3000, () => console.log('Server started on port 3000'))

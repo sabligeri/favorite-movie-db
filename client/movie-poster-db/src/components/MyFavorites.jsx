@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DeleteVerify from "./DeleteVerify";
 
 function MyFavorites() {
   const [updatedSeen, setUpdatedSeen] = useState(false);
@@ -6,6 +7,17 @@ function MyFavorites() {
   const [comment, setComment] = useState('');
   const [favMovies, setFavMovies] = useState([]);
   const [editFavMovies, setEditFavMovies] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [id, setId] = useState(null);
+
+  const deleteMovie = (id) => {
+    return fetch(`/api/favmovies/${id}`, { method: "DELETE" }).then((res) =>
+      res.json())
+      .then(setFavMovies((favMovies) => {
+        return favMovies.filter((favMovie) => favMovie._id !== id);
+      }))
+      .then(setShowModal(false))
+  };
 
   useEffect(() => {
     fetch('/api/favmovies')
@@ -50,11 +62,12 @@ function MyFavorites() {
     }
   };
 
-
-
   return (
     <>
       <h1> My favorite movies </h1>
+    {(showModal === true) ? (
+        <DeleteVerify deleteMovie={() => deleteMovie(id)} closeModal={setShowModal}/>) : (null)
+      }
       <div style={{ overflowX: "auto", display: "flex" }}>
         {favMovies.map(movie => (
           <div style={{ display: "inline-block", margin: "10px", textAlign: "center" }} key={movie._id}>
@@ -90,6 +103,7 @@ function MyFavorites() {
               ) : (
                 <button onClick={() => handleEditFavMovies(movie)}>Edit</button>
               )}
+              <button onClick={() => { setShowModal(true); setId(movie._id) }}> Remove from favorites </button>
             </div>
           </div>
         )
