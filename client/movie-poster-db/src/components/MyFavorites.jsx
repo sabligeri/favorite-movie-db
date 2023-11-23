@@ -30,7 +30,7 @@ function MyFavorites() {
     setComment(movie.comment);
   };
 
-  const handleUpdateTodo = () => {
+  const handleUpdateFavMovies = () => {
     if (editFavMovies) {
       fetch(`/api/favmovies/${editFavMovies._id}`, {
         method: 'PATCH',
@@ -95,7 +95,7 @@ function MyFavorites() {
             </div>
             <div>
               {editFavMovies === movie ? (
-                <button onClick={handleUpdateTodo}>Save</button>
+                <button onClick={handleUpdateFavMovies}>Save</button>
               ) : (
                 <button onClick={() => handleEditFavMovies(movie)}>Edit</button>
               )}
