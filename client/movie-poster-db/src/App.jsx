@@ -6,9 +6,9 @@ import MyFavorites from './components/MyFavorites';
 
 function App() {
 
-  const [searchInput, setSearchInput] = useState('');
   const [movies, setMovies] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     (searchInput.length > 0) ?

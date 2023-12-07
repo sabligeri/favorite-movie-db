@@ -10,3 +10,4 @@ const SearchBar = ({value, inputChange}) => {
 }
 
 export default SearchBar;
+

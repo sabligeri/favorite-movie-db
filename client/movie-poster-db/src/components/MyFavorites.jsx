@@ -61,6 +61,8 @@ function MyFavorites() {
     }
   };
 
+  
+
   return (
     <>
       <h1> My favorite movies </h1>

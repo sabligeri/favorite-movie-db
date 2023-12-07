@@ -20,6 +20,7 @@ const MoviesTable = ({ movies }) => {
         console.log(error);
       });
   }
+
   return (
     <table>
         <tbody>
@@ -29,6 +30,7 @@ const MoviesTable = ({ movies }) => {
                 <img src={(movie.Poster !== 'N/A') ? movie.Poster : './src/noMoviePoster.jpg'} />
                 <h3> {movie.Title} </h3>
                 <h4> {movie.Year}</h4>
+                <h4> {movie.Genre}</h4>
                 <button onClick={() => handleSaveToFavMovies(movie)}>Add to favorites</button>
               </th>
             )

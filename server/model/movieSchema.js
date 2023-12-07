@@ -7,6 +7,7 @@ const movieSchema = new Schema({
     year: String,
     seen: String,
     comment: String,
+    genre: String
 })
 
 export default model('Movies', movieSchema);

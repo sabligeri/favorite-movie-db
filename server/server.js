@@ -14,6 +14,7 @@ app.post('/api/favmovies', (req, res) => {
   const poster = req.body.poster;
   const title = req.body.title;
   const year = req.body.year;
+  const genre = req.body.genre;
   const seen = 'unseen';
   const comment = '';
   const movieList = new MovieList({
@@ -22,6 +23,7 @@ app.post('/api/favmovies', (req, res) => {
     year,
     seen,
     comment,
+    genre,
   });
   movieList.save()
       .then(movies => res.json(movies))
@@ -32,7 +34,13 @@ app.get('/api/favmovies', (req, res) => {
   MovieList.find()
         .then(movies => res.json(movies))
         .catch(err => res.status(400).json({ success: false, error: err }));
-})
+});
+
+app.get('/api/favmovies/year', (req, res) => {
+  MovieList.find().sort({ year: "desc" })
+  .then(movies => res.json(movies))
+  .catch(err => res.status(400).json({ success: false, error: err }));
+});
 
 app.patch('/api/favmovies/:id', (req, res) => {
   const todoId = req.params.id;
