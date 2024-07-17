@@ -35,6 +35,7 @@ My Favorite Movies DB is a web application that allows users to search for movie
 
 * [![JavaScript][JavaScript]][JavaScript-url]
 * [![React][React]][React-url]
+* [![Vite][Vite]][Vite-url]
 * [![Node.js][Node.js]][Node.js-url]
 * [![MongoDB][MongoDB]][MongoDB-url]
 
@@ -150,3 +151,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [Node.js-url]: https://nodejs.org/
 [MongoDB]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB-url]: https://www.mongodb.com/
+[Vite]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vitejs.dev/
