@@ -62,15 +62,21 @@ To get a local copy up and running follow these simple example steps.
 
 2. Install NPM packages:
     ```bash
+    cd .\client\movie-poster-db\
     npm install
     ```
 
-3. Set environment variables for your database in the `.env` file:
+3. Add database connection:
+    *  Navigate to the server folder (like in the previous step)
+    * Create a .env file based on the .env.sample file
+    * Insert your MongoDB connection URL
+
+5. Set environment variables for your database in the `.env` file:
     ```env
     MOVIE_DB=yourmoviedbconnectionstring
     ```
 
-4. Start the application:
+6. Start the application:
     ```bash
     cd .\client\movie-poster-db\
     npm run dev
@@ -81,40 +87,14 @@ To get a local copy up and running follow these simple example steps.
 <!-- SCREENSHOTS -->
 ## Screenshots
 
-### Login Page
-![Login Page](path/to/login-screenshot.png)
-
 ### Main Page
-![Main Page](path/to/main-screenshot.png)
+![Login Page](https://github.com/sabligeri/favorite-movie-db/blob/main/images/main.png)
 
-### Favorites Page
-![Favorites Page](path/to/favorites-screenshot.png)
-
-### Premium Feature
-![Premium Feature](path/to/premium-screenshot.png)
+### Searchbar in progress
+![Main Page](https://github.com/sabligeri/favorite-movie-db/blob/main/images/search.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
