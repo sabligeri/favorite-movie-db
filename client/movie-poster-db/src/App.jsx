@@ -9,10 +9,11 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
   const [searchInput, setSearchInput] = useState('');
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     (searchInput.length > 0) ?
-      fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=5b56c331`)
+      fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=${apiKey}`)
         .then(res => res.json())
         .then(movies => {
           if (movies.Response === 'True') {
